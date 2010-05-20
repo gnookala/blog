@@ -235,3 +235,214 @@ Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/posts]
 Processing HomeController#index (for 127.0.0.1 at 2010-05-20 08:20:09) [GET]
 Rendering home/index
 Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-05-20 08:27:47) [GET]
+Rendering home/index
+Completed in 85ms (View: 84, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 08:27:49) [GET]
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 29ms (View: 24, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-05-20 08:27:50) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 2116ms (View: 2110, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-05-20 08:27:56) [POST]
+  Parameters: {"authenticity_token"=>"9OCf7WKjMHXghfNSKuoxOcaGZTzU9CgCjuh5tyw6dAA=", "post"=>{"name"=>"", "title"=>"", "content"=>""}, "commit"=>"Create"}
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-05-20 08:28:04) [POST]
+  Parameters: {"authenticity_token"=>"9OCf7WKjMHXghfNSKuoxOcaGZTzU9CgCjuh5tyw6dAA=", "post"=>{"name"=>"ada", "title"=>"adad", "content"=>""}, "commit"=>"Create"}
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 18ms (View: 10, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-05-20 08:28:08) [POST]
+  Parameters: {"authenticity_token"=>"9OCf7WKjMHXghfNSKuoxOcaGZTzU9CgCjuh5tyw6dAA=", "post"=>{"name"=>"ada", "title"=>"adada", "content"=>""}, "commit"=>"Create"}
+  [4;35;1mPost Create (3.0ms)[0m   [0mINSERT INTO "posts" ("name", "title", "content", "created_at", "updated_at") VALUES('ada', 'adada', '', '2010-05-20 15:28:08', '2010-05-20 15:28:08')[0m
+Redirected to http://localhost:3000/posts/2
+Completed in 14ms (DB: 3) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 08:28:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 08:28:10) [GET]
+  [4;35;1mPost Load (1.0ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#destroy (for 127.0.0.1 at 2010-05-20 08:28:13) [DELETE]
+  Parameters: {"authenticity_token"=>"9OCf7WKjMHXghfNSKuoxOcaGZTzU9CgCjuh5tyw6dAA=", "id"=>"2"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mPost Destroy (0.0ms)[0m   [0mDELETE FROM "posts" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/posts
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/posts/2]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 08:28:13) [GET]
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-05-20 08:28:15) [GET]
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 08:34:56) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 88ms (View: 82, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-05-20 08:35:01) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-05-20 08:35:15) [POST]
+  Parameters: {"authenticity_token"=>"9OCf7WKjMHXghfNSKuoxOcaGZTzU9CgCjuh5tyw6dAA=", "post"=>{"name"=>"hello", "title"=>"world", "content"=>"welcome to ruby!"}, "commit"=>"Create"}
+  [4;35;1mPost Create (1.0ms)[0m   [0mINSERT INTO "posts" ("name", "title", "content", "created_at", "updated_at") VALUES('hello', 'world', 'welcome to ruby!', '2010-05-20 15:35:15', '2010-05-20 15:35:15')[0m
+Redirected to http://localhost:3000/posts/3
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 08:35:15) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/posts/3]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 08:35:19) [GET]
+  [4;35;1mPost Load (1.0ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-05-20 08:35:21) [GET]
+Rendering home/index
+Completed in 15ms (View: 14, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 08:42:29) [GET]
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 93ms (View: 87, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-05-20 08:42:33) [GET]
+Rendering home/index
+Completed in 14ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 08:42:36) [GET]
+  [4;35;1mPost Load (1.0ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-05-20 09:24:46) [GET]
+Rendering home/index
+Completed in 71ms (View: 70, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 09:24:48) [GET]
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 33ms (View: 27, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-05-20 09:24:50) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 19ms (View: 13, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-05-20 09:25:00) [POST]
+  Parameters: {"authenticity_token"=>"9OCf7WKjMHXghfNSKuoxOcaGZTzU9CgCjuh5tyw6dAA=", "post"=>{"name"=>"ada", "title"=>"adad", "content"=>""}, "commit"=>"Create"}
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 18ms (View: 10, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-05-20 09:25:04) [POST]
+  Parameters: {"authenticity_token"=>"9OCf7WKjMHXghfNSKuoxOcaGZTzU9CgCjuh5tyw6dAA=", "post"=>{"name"=>"ada", "title"=>"adada", "content"=>""}, "commit"=>"Create"}
+  [4;35;1mPost Create (1.0ms)[0m   [0mINSERT INTO "posts" ("name", "title", "content", "created_at", "updated_at") VALUES('ada', 'adada', '', '2010-05-20 16:25:04', '2010-05-20 16:25:04')[0m
+Redirected to http://localhost:3000/posts/4
+Completed in 47ms (DB: 1) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 09:25:04) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/posts/4]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 09:25:07) [GET]
+  [4;35;1mPost Load (1.0ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-05-20 09:25:11) [GET]
+Rendering home/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 09:25:13) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 09:25:59) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Load (1.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 14ms (View: 4, DB: 1) | 200 OK [http://localhost/posts/3]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 09:26:01) [GET]
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/posts]
