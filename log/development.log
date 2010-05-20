@@ -774,3 +774,613 @@ Processing PostsController#index (for 127.0.0.1 at 2010-05-20 10:02:03) [GET]
 Rendering template within layouts/posts
 Rendering posts/index
 Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-05-20 10:17:30) [GET]
+Rendering home/index
+Completed in 78ms (View: 76, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 10:17:31) [GET]
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 155ms (View: 30, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 10:17:34) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Load (1.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+
+ActionView::TemplateError (undefined method `post_comments_path' for #<ActionView::Base:0x5807560>) on line #31 of app/views/posts/show.html.erb:
+28: 
+29: <%= link_to 'Edit', edit_post_path(@post) %> |
+30: <%= link_to 'Back', posts_path %>
+31: <%= link_to 'Manage Comments', post_comments_path(@post) %> 
+
+    app/views/posts/show.html.erb:31
+    app/controllers/posts_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    c:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (72.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-05-20 10:17:51) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Load (1.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/edit
+Rendered posts/_form (4.0ms)
+Completed in 28ms (View: 21, DB: 1) | 200 OK [http://localhost/posts/3/edit]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-05-20 10:17:55) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (3.0ms)
+Completed in 19ms (View: 13, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 10:18:01) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;35;1mComment Load (1.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+
+ActionView::TemplateError (undefined method `post_comments_path' for #<ActionView::Base:0x4e2f760>) on line #31 of app/views/posts/show.html.erb:
+28: 
+29: <%= link_to 'Edit', edit_post_path(@post) %> |
+30: <%= link_to 'Back', posts_path %>
+31: <%= link_to 'Manage Comments', post_comments_path(@post) %> 
+
+    app/views/posts/show.html.erb:31
+    app/controllers/posts_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    c:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (110.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-05-20 10:18:48) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (3.0ms)
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 10:18:50) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 10:18:51) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+
+ActionView::TemplateError (undefined method `post_comments_path' for #<ActionView::Base:0x5531240>) on line #1 of app/views/posts/show.html.erb:
+1: <p>  <b>Name:</b>  <%=h @post.name %> </p> <p>  <b>Title:</b>  <%=h @post.title %> </p> <p>  <b>Content:</b>  <%=h @post.content %> </p> <h2>Comments</h2> <% @post.comments.each do |c| %>  <p>  <b>Commenter:</b>  <%=h c.commenter %>  </p>  <p>  <b>Comment:</b>  <%=h c.body %>  </p> <% end %> <%= link_to 'Edit Post', edit_post_path(@post) %> | <%= link_to 'Back to Posts', posts_path %> | <%= link_to 'Manage Comments', post_comments_path(@post) %> 
+
+    app/views/posts/show.html.erb:1
+    app/controllers/posts_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    c:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (71.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 10:19:34) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+
+ActionView::TemplateError (undefined method `post_comments_path' for #<ActionView::Base:0x3b0b8c0>) on line #1 of app/views/posts/show.html.erb:
+1: <p>  <b>Name:</b>  <%=h @post.name %> </p> <p>  <b>Title:</b>  <%=h @post.title %> </p> <p>  <b>Content:</b>  <%=h @post.content %> </p> <h2>Comments</h2> <% @post.comments.each do |c| %>  <p>  <b>Commenter:</b>  <%=h c.commenter %>  </p>  <p>  <b>Comment:</b>  <%=h c.body %>  </p> <% end %> <%= link_to 'Edit Post', edit_post_path(@post) %> | <%= link_to 'Back to Posts', posts_path %> | <%= link_to 'Manage Comments', post_comments_path(@post) %> 
+
+    app/views/posts/show.html.erb:1
+    app/controllers/posts_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    c:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (117.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100520073152)
+Migrating to CreateComments (20100520170025)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("posts")[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 10:22:40) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;35;1mComment Load (1.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 179ms (View: 111, DB: 2) | 200 OK [http://localhost/posts/3]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-20 10:22:43) [GET]
+  Parameters: {"post_id"=>"3"}
+
+SyntaxError (c:/blog/app/controllers/comments_controller.rb:1: formal argument cannot be an instance variable
+...ationController def index @post = Post.find(params[:post_id]...
+...                               ^
+c:/blog/app/controllers/comments_controller.rb:1: syntax error, unexpected '=', expecting ';' or '\n'
+...ionController def index @post = Post.find(params[:post_id]) ...
+...                               ^):
+  <internal:prelude>:8:in `synchronize'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (84.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 10:22:55) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 19ms (View: 13, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-05-20 10:23:00) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/posts
+Rendering posts/edit
+Rendered posts/_form (5.0ms)
+Completed in 29ms (View: 23, DB: 0) | 200 OK [http://localhost/posts/4/edit]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 10:23:03) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 10:23:04) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (1.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://localhost/posts/4]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-20 10:23:06) [GET]
+  Parameters: {"post_id"=>"4"}
+
+SyntaxError (c:/blog/app/controllers/comments_controller.rb:1: formal argument cannot be an instance variable
+...ationController def index @post = Post.find(params[:post_id]...
+...                               ^
+c:/blog/app/controllers/comments_controller.rb:1: syntax error, unexpected '=', expecting ';' or '\n'
+...ionController def index @post = Post.find(params[:post_id]) ...
+...                               ^):
+  <internal:prelude>:8:in `synchronize'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (50.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-05-20 10:24:00) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPost Load (1.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/posts
+Rendering posts/edit
+Rendered posts/_form (3.0ms)
+Completed in 15ms (View: 7, DB: 1) | 200 OK [http://localhost/posts/4/edit]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 10:24:02) [GET]
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 10:24:04) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Load (1.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/posts/3]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-20 10:24:05) [GET]
+  Parameters: {"post_id"=>"3"}
+
+SyntaxError (c:/blog/app/controllers/comments_controller.rb:1: formal argument cannot be an instance variable
+...ationController def index @post = Post.find(params[:post_id]...
+...                               ^
+c:/blog/app/controllers/comments_controller.rb:1: syntax error, unexpected '=', expecting ';' or '\n'
+...ionController def index @post = Post.find(params[:post_id]) ...
+...                               ^):
+  <internal:prelude>:8:in `synchronize'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (49.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 10:25:25) [GET]
+  [4;35;1mPost Load (1.0ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 10:25:26) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;35;1mComment Load (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/3]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-20 10:25:27) [GET]
+  Parameters: {"post_id"=>"3"}
+
+SyntaxError (c:/blog/app/controllers/comments_controller.rb:1: formal argument cannot be an instance variable
+...ationController def index @post = Post.find(params[:post_id]...
+...                               ^
+c:/blog/app/controllers/comments_controller.rb:1: syntax error, unexpected '=', expecting ';' or '\n'
+...ionController def index @post = Post.find(params[:post_id]) ...
+...                               ^):
+  <internal:prelude>:8:in `synchronize'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (49.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-20 10:28:46) [GET]
+  Parameters: {"post_id"=>"3"}
+
+SyntaxError (c:/blog/app/controllers/comments_controller.rb:3: formal argument cannot be an instance variable
+def index @post = Post.find(params[:post_id])  
+               ^
+c:/blog/app/controllers/comments_controller.rb:3: syntax error, unexpected '=', expecting ';' or '\n'
+def index @post = Post.find(params[:post_id])  
+                 ^
+c:/blog/app/controllers/comments_controller.rb:48: syntax error, unexpected keyword_end, expecting $end):
+  <internal:prelude>:8:in `synchronize'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (87.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-05-20 10:29:03) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+  [4;35;1mComment Load (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 29ms (View: 18, DB: 0) | 200 OK [http://localhost/posts/3/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 10:29:07) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;35;1mComment Load (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/3]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-05-20 10:29:11) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+  [4;35;1mComment Load (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 16ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/3/comments]
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-05-20 10:29:21) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/new
+Completed in 25ms (View: 12, DB: 1) | 200 OK [http://localhost/posts/3/comments/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-05-20 10:29:31) [POST]
+  Parameters: {"authenticity_token"=>"9OCf7WKjMHXghfNSKuoxOcaGZTzU9CgCjuh5tyw6dAA=", "comment"=>{"commenter"=>"gautham", "body"=>"not bad, verry nice!"}, "commit"=>"Create", "post_id"=>"3"}
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+
+ActionController::RoutingError (post_comment_url failed to generate from {:controller=>"comments", :action=>"show", :post_id=>#<Post id: 3, name: "hello", title: "world", content: "welcome to ruby!", created_at: "2010-05-20 15:35:15", updated_at: "2010-05-20 15:35:15">, :id=>#<Comment id: nil, commenter: "gautham", body: "not bad, verry nice!", post_id: 3, created_at: nil, updated_at: nil>}, expected: {:controller=>"comments", :action=>"show"}, diff: {:post_id=>#<Post id: 3, name: "hello", title: "world", content: "welcome to ruby!", created_at: "2010-05-20 15:35:15", updated_at: "2010-05-20 15:35:15">, :id=>#<Comment id: nil, commenter: "gautham", body: "not bad, verry nice!", post_id: 3, created_at: nil, updated_at: nil>}):
+  (eval):16:in `post_comment_url'
+  app/controllers/comments_controller.rb:21:in `create'
+  <internal:prelude>:8:in `synchronize'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  c:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-05-20 10:31:39) [POST]
+  Parameters: {"authenticity_token"=>"9OCf7WKjMHXghfNSKuoxOcaGZTzU9CgCjuh5tyw6dAA=", "comment"=>{"commenter"=>"gautham", "body"=>"not bad, verry nice!"}, "commit"=>"Create", "post_id"=>"3"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;35;1mComment Create (2.0ms)[0m   [0mINSERT INTO "comments" ("commenter", "body", "post_id", "created_at", "updated_at") VALUES('gautham', 'not bad, verry nice!', 3, '2010-05-20 17:31:39', '2010-05-20 17:31:39')[0m
+Redirected to http://localhost:3000/posts/3/comments/1
+Completed in 23ms (DB: 2) | 302 Found [http://localhost/posts/3/comments]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-05-20 10:31:39) [GET]
+  Parameters: {"post_id"=>"3", "id"=>"1"}
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;35;1mComment Load (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 1 AND ("comments".post_id = 3)) [0m
+Rendering comments/show
+Completed in 24ms (View: 12, DB: 1) | 200 OK [http://localhost/posts/3/comments/1]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-05-20 10:31:41) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+  [4;35;1mComment Load (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 18ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/3/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 10:31:43) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;35;1mComment Load (1.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://localhost/posts/3]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 10:31:53) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 10:31:54) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 18ms (View: 10, DB: 0) | 200 OK [http://localhost/posts/3]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-05-20 10:31:56) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;35;1mPost Load (1.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+  [4;36;1mComment Load (1.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 18ms (View: 6, DB: 2) | 200 OK [http://localhost/posts/3/comments]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-05-20 10:32:01) [GET]
+  Parameters: {"post_id"=>"3", "id"=>"1"}
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;36;1mComment Load (1.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 1 AND ("comments".post_id = 3)) [0m
+Rendering comments/show
+Completed in 16ms (View: 5, DB: 1) | 200 OK [http://localhost/posts/3/comments/1]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-05-20 10:32:03) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+  [4;36;1mComment Load (1.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 17ms (View: 5, DB: 1) | 200 OK [http://localhost/posts/3/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 10:32:04) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Load (1.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 18ms (View: 10, DB: 1) | 200 OK [http://localhost/posts/3]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 10:32:06) [GET]
+  [4;35;1mPost Load (1.0ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-05-20 10:32:07) [GET]
+Rendering home/index
+Completed in 16ms (View: 15, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 10:32:09) [GET]
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 14ms (View: 6, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-05-20 10:32:51) [GET]
+Rendering home/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 10:32:53) [GET]
+  [4;35;1mPost Load (1.0ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 12ms (View: 5, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-05-20 10:32:56) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (3.0ms)
+Completed in 19ms (View: 13, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 10:33:01) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 10:33:04) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/posts/3]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-05-20 10:33:09) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+  [4;36;1mComment Load (1.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 16ms (View: 5, DB: 1) | 200 OK [http://localhost/posts/3/comments]
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-05-20 10:33:12) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/new
+Completed in 17ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/3/comments/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-05-20 10:33:18) [POST]
+  Parameters: {"authenticity_token"=>"9OCf7WKjMHXghfNSKuoxOcaGZTzU9CgCjuh5tyw6dAA=", "comment"=>{"commenter"=>"me", "body"=>"well done"}, "commit"=>"Create", "post_id"=>"3"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;35;1mComment Create (1.0ms)[0m   [0mINSERT INTO "comments" ("commenter", "body", "post_id", "created_at", "updated_at") VALUES('me', 'well done', 3, '2010-05-20 17:33:18', '2010-05-20 17:33:18')[0m
+Redirected to http://localhost:3000/posts/3/comments/2
+Completed in 20ms (DB: 1) | 302 Found [http://localhost/posts/3/comments]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-05-20 10:33:18) [GET]
+  Parameters: {"post_id"=>"3", "id"=>"2"}
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;35;1mComment Load (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 2 AND ("comments".post_id = 3)) [0m
+Rendering comments/show
+Completed in 16ms (View: 4, DB: 1) | 200 OK [http://localhost/posts/3/comments/2]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-05-20 10:33:20) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+  [4;35;1mComment Load (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/posts/3/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 10:33:23) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;35;1mComment Load (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 17ms (View: 10, DB: 1) | 200 OK [http://localhost/posts/3]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-05-20 10:34:53) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+  [4;35;1mComment Load (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 16ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/3/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 10:35:03) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;35;1mComment Load (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/posts/3]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-05-20 10:35:05) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+  [4;35;1mComment Load (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 24ms (View: 10, DB: 1) | 200 OK [http://localhost/posts/3/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-05-20 10:35:21) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;35;1mComment Load (1.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://localhost/posts/3]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-20 10:35:24) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-05-20 10:35:26) [GET]
+Rendering home/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
